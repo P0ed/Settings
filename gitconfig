@@ -1,0 +1,19 @@
+[alias]
+	co = checkout
+	br = branch
+	rb = rebase
+	hr = reset --hard
+	sr = reset --soft
+	ci = !git commit
+	
+	lg = log --graph --oneline --decorate --all
+	rs = !git co master && git hr origin/master
+	ac = !git add -A && git ci
+	sc = !git fetch origin && git rb
+	mg = !git merge --no-ff --no-edit
+	srb = !git ac -m "t" && git rb && git sr HEAD~1
+
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
